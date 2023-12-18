@@ -9,6 +9,7 @@ createInertiaApp({
         const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
 
         const page = await pages[`./Pages/${name}.vue`];
+        // load Layout to every pages
         page.default.layout = page.default.layout || MainLayout;
         return page;
     },
