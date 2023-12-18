@@ -15,6 +15,7 @@ const timer = ref(0);
 setInterval(() => timer.value++, 1000);
 
 //console.log(timer.value);
+//ssasaassa
 </script>
 
 <style lang="scss"></style>
