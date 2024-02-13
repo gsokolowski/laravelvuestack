@@ -20,5 +20,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        
+        
+        //create 20 records in table Listing based provided ListingFactory file
+        \App\Models\Listing::factory(20)->create();
     }
 }
