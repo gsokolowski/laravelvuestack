@@ -25,7 +25,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Listing/Create'); // load form for adding listing position
     }
 
     /**
