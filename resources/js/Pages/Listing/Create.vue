@@ -4,41 +4,65 @@
             <div>
                 <label>Beds</label>
                 <input v-model.number="form.beds" type="text" />
+                <div v-if="form.errors.beds">
+                    {{ form.errors.beds }}
+                </div>
             </div>
 
             <div>
                 <label>Baths</label>
                 <input v-model.number="form.baths" type="text" />
+                <div v-if="form.errors.baths">
+                    {{ form.errors.baths }}
+                </div>
             </div>
 
             <div>
                 <label>Area</label>
                 <input v-model.number="form.area" type="text" />
+                <div v-if="form.errors.area">
+                    {{ form.errors.area }}
+                </div>
             </div>
 
             <div>
                 <label>City</label>
                 <input v-model="form.city" type="text" />
+                <div v-if="form.errors.city">
+                    {{ form.errors.city }}
+                </div>
             </div>
 
             <div>
                 <label>Post Code</label>
                 <input v-model="form.code" type="text" />
+                <div v-if="form.errors.code">
+                    {{ form.errors.code }}
+                </div>
             </div>
 
             <div>
                 <label>Street</label>
                 <input v-model="form.street" type="text" />
+                <div v-if="form.errors.street">
+                    {{ form.errors.street }}
+                </div>
             </div>
 
             <div>
                 <label>Street Nr</label>
                 <input v-model.number="form.street_nr" type="text" />
+                <div v-if="form.errors.street_nr">
+                    {{ form.errors.street_nr }}
+                </div>
             </div>
 
             <div>
                 <label>Price</label>
                 <input v-model.number="form.price" type="text" />
+                <div v-if="form.errors.price">
+                    {{ form.errors.price }}
+                </div>
             </div>
 
             <div>
@@ -49,7 +73,8 @@
 </template>
 
 <script setup>
-import { reactive } from "vue"; // ref is used for single numbers reactive for objects
+//import { reactive } from "vue"; // ref is used for single numbers reactive for objects
+//import { useForm } from "@inertiajs/inertia-vue3"; // old version on inertia
 import { useForm } from "@inertiajs/vue3"; // useForm is fully reactive helper
 const form = useForm({
     beds: 0,
@@ -68,6 +93,7 @@ function create() {
 //const create = () => form.post("/listing", form);
 </script>
 
+<!-- make unique styles per component-->
 <style scoped>
 label {
     margin-right: 2em;

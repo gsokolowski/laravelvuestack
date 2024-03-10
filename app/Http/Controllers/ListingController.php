@@ -33,7 +33,49 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // validate data from POST
+
+        $validated = $request->validate([
+            'beds' => 'required|integer|min:1|max:20',
+            'baths' => 'required|integer|min:1|max:20',
+            'area' => 'required|integer|min:15|max:1500',
+            'city' => 'required|string',
+            'code' => 'required',
+            'street' => 'required|string',
+            'street_nr' => 'required|min:1|max:1000',
+            'price' => 'required|integer|min:1|max:1000'
+        ]);
+
+        // get request from post 
+
+        $listing = new Listing();
+
+        $listing->beds = $request->beds;
+        $listing->baths = $request->baths;
+        $listing->area = $request->area;
+        $listing->city = $request->city;
+        $listing->street = $request->street;
+        $listing->code = $request->code;
+        $listing->street_nr = $request->street_nr;
+        $listing->price = $request->price;
+
+
+        $listing->save();
+
+
+
+
+
+        // Store store data in database...
+
+
+        // redirect to diferent page
+        //return redirect()->route('listing.index');
+        return redirect('/listing')->with('success', 'Listing added successfully!');
+
+        // send alert to user that data has been stored
+
     }
 
     /**
