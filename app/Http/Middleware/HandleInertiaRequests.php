@@ -37,6 +37,7 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
+            // get success message from redirects (session holds them in larave)
             'flash' => ['success'=>$request->session()->get('success')]
         ]);
     }

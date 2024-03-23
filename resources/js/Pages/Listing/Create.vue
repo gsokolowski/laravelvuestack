@@ -87,7 +87,8 @@ const form = useForm({
     price: 0,
 });
 function create() {
-    form.post("/listing", form);
+    //form.post("/listing", form);
+    form.post(route("listing.store"), form);
 }
 //or
 //const create = () => form.post("/listing", form);
